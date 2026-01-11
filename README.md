@@ -64,11 +64,17 @@ If you want to change the parameters and train both models yourself:
 
 #
 ### Evaluation
-Confusion matrices for both models are stored in the 'plots' directory.
+Confusion matrices for both models are stored in the 'plots' directory. <br>
+The test directory contains files used after the models had been trained for evaluation purposes. <br>
+Further information about evaluation metrics can be found on the training notebooks. <br>
 
-The test directory contains files used after the models had been trained for evaluation purposes.
+**Results:**
 
-Further information about evaluation metrics can be found on the training notebooks
+roBERTa: <br>
+Testing accuracy: 89% (tested on 28135 samples) <br>
+Weighted F1-score: 89%
 
+MultinomialNB: <br>
+Testing accuracy: 77% (tested on 27847 samples) <br>
+Weighted F1-score: 77%
 
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=22061418&assignment_repo_type=AssignmentRepo)
