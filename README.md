@@ -8,3 +8,7 @@ Orgest Baçova
 ### Dataset:
 *[News Category Dataset](https://www.kaggle.com/datasets/rmisra/news-category-dataset)*
 Misra, Rishabh. "News Category Dataset." arXiv preprint arXiv:2209.11429 (2022).
+
+### News Classifier Model
+https://huggingface.co/sidrit30/roberta_news_classifier
+
