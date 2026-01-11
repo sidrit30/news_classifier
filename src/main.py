@@ -21,9 +21,15 @@ st.set_page_config(
 # ---------------------------------------------------------
 @st.cache_resource
 def load_nb_model():
-    """Loads the Naive Bayes model and its TF-IDF vectorizer."""
-    model = joblib.load('naive_bayes_model/naive_bayes_model.pkl')
-    vectorizer = joblib.load('naive_bayes_model/tfidf_vectorizer.pkl')
+    # Get the directory that main.py is in
+    base_path = os.path.dirname(__file__)
+    
+    # Construct paths to the models
+    model_path = os.path.join(base_path, 'naive_bayes_model', 'naive_bayes_model.pkl')
+    vec_path = os.path.join(base_path, 'naive_bayes_model', 'tfidf_vectorizer.pkl')
+    
+    model = joblib.load(model_path)
+    vectorizer = joblib.load(vec_path)
     return model, vectorizer
 
 
@@ -36,7 +42,8 @@ def load_roberta_model():
 @st.cache_data
 def load_dataset():
     """Loads the compact news dataset."""
-    return pd.read_csv('data/News_Category_Dataset_v3_compact.csv')
+    data_path = os.path.join(base_path, 'data', 'News_Category_Dataset_v3_compact.csv')
+    return pd.read_csv(data_path)
 
 
 nb_model, nb_vectorizer = load_nb_model()
@@ -110,4 +117,5 @@ elif app_mode == "Model Demonstration (Random)":
                 st.balloons()
                 st.success("The model predicted correctly!")
             else:
+
                 st.error("The model prediction did not match the actual category.")
