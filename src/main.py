@@ -41,7 +41,7 @@ def load_roberta_model():
 
 @st.cache_data
 def load_dataset():
-    """Loads the compact news dataset."""
+    base_path = os.path.dirname(__file__)
     data_path = os.path.join(base_path, 'data', 'News_Category_Dataset_v3_compact.csv')
     return pd.read_csv(data_path)
 
@@ -119,3 +119,4 @@ elif app_mode == "Model Demonstration (Random)":
             else:
 
                 st.error("The model prediction did not match the actual category.")
+
